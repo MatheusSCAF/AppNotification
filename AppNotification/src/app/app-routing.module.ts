@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'terc-ano',
     loadChildren: () => import('./terc-ano/terc-ano.module').then( m => m.TercAnoPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 
