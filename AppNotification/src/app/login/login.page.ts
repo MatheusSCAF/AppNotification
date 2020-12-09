@@ -58,5 +58,12 @@ export class LoginPage implements OnInit {
       window.alert(error.message);
     });
   }
+  logOut()
+  {
+    this.authService.SignOut()
+    .then(() =>{
+      this.router.navigateByUrl('login');
+    })
+  }
 
 }

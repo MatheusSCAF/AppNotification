@@ -1,11 +1,19 @@
+import { from } from 'rxjs';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import {AngularFireAuthGuard,canActivate,redirectLoggedInTo,redirectUnauthorizedTo} from '@angular/fire/auth-guard'
+import { AngularFireAuth } from '@angular/fire/auth';
 
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectLoggedInToItems = () => redirectLoggedInTo(['folder'])
 const routes: Routes = [
   {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
+    // canActivate: [AngularFireAuthGuard],
+    // data: {AuthGuardPipe : redirectUnauthorizedTo}
+
   },
   {
     path: 'folder',
