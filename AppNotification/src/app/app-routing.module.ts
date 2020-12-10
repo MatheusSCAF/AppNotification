@@ -11,29 +11,38 @@ const routes: Routes = [
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'
-    // canActivate: [AngularFireAuthGuard],
-    // data: {AuthGuardPipe : redirectUnauthorizedTo}
+    
 
   },
   {
     path: 'folder',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule),
+     canActivate: [AngularFireAuthGuard],
+     data: {AuthGuardPipe : redirectUnauthorizedTo},
+     
   },
   {
     path: 'prim-ano',
-    loadChildren: () => import('./prim-ano/prim-ano.module').then( m => m.PrimAnoPageModule)
+    loadChildren: () => import('./prim-ano/prim-ano.module').then( m => m.PrimAnoPageModule),
+    data: {AuthGuardPipe : redirectUnauthorizedTo},
+    canActivate: [AngularFireAuthGuard],
   },
   {
     path: 'seg-ano',
-    loadChildren: () => import('./seg-ano/seg-ano.module').then( m => m.SegAnoPageModule)
+    loadChildren: () => import('./seg-ano/seg-ano.module').then( m => m.SegAnoPageModule),
+    data: {AuthGuardPipe : redirectUnauthorizedTo},
+    canActivate: [AngularFireAuthGuard],
   },
   {
     path: 'terc-ano',
-    loadChildren: () => import('./terc-ano/terc-ano.module').then( m => m.TercAnoPageModule)
+    loadChildren: () => import('./terc-ano/terc-ano.module').then( m => m.TercAnoPageModule),
+    data: {AuthGuardPipe : redirectUnauthorizedTo},
+    canActivate: [AngularFireAuthGuard],
   },
   {
     path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule),
+  
   }
 ];
 
