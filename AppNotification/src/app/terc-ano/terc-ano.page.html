@@ -11,4 +11,50 @@
 
 <ion-content>
 
+  <!-- <ion-card> -->
+    <!-- tappable (click)="collapseCard = !collapseCard" -->
+    <!-- *ngIf="!collapseCard" -->
+    <!-- <ion-card-header tappable (click)="collapseCard = !collapseCard">
+      <ion-card-title>New event</ion-card-title>
+    </ion-card-header>
+    <ion-card-content *ngIf="!collapseCard">
+
+      <ion-item>
+        <ion-input type='text' placeholder ="Title" [(ngModel)]="event.title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type='text' placeholder ="Description" [(ngModel)]="event.desc"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Start</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.startTime"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>End</ion-label>
+        <ion-datetime displayFormat="MM/DD/YYYY HH:mm" pickerFormat="MMM D:HH:mm" [(ngModel)]="event.endTime"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label>All Day?</ion-label>
+        <ion-checkbox [(ngModel)]="event.allDay"></ion-checkbox>
+      </ion-item>
+      <ion-button fill="outline" expand="block" (click)="addEvent()" [disabled]="event.title == ''"]> Add event</ion-button>
+
+    </ion-card-content>
+  </ion-card> -->
+
+
+
+  <calendar [eventSource]="eventSource"
+  [calendarMode]="calendar.mode"
+  [currentDate]="calendar.currentDate"
+  (onCurrentDateChanged)="onCurrentDateChanged($event)"
+  (onRangeChanged)="reloadSource(startTime, endTime)"
+  (onEventSelected)="onEventSelected($event)"
+  (onTitleChanged)="onViewTitleChanged($event)"
+  (onTimeSelected)="onTimeSelected($event)"
+  startHour="6"
+  endhour="20"
+  step="30"
+  startDayWeek="1">
+</calendar>
 </ion-content>

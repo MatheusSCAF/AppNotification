@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { TercAnoPageRoutingModule } from './terc-ano-routing.module';
 
 import { TercAnoPage } from './terc-ano.page';
-
+import {NgCalendarModule} from 'ionic2-calendar'
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TercAnoPageRoutingModule
+    TercAnoPageRoutingModule,
+    NgCalendarModule
+
   ],
   declarations: [TercAnoPage]
 })
