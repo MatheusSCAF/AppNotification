@@ -4,12 +4,16 @@
       <ion-buttons slot="start">
         <ion-back-button defaultHref="folder"></ion-back-button>
       </ion-buttons>
-      <ion-title>3º Ano </ion-title>
+      <ion-title>3º Ano</ion-title>
     </ion-toolbar>
   </ion-header>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>Date</ion-label>
+    <ion-datetime display-format ='DD/MMMM/YYYY' picker-format = "MMMM YYYY"></ion-datetime>
+  </ion-item>
 
    <!-- <ion-card> 
      tappable (click)="collapseCard = !collapseCard" 
@@ -57,4 +61,5 @@
   step="30"
   startDayWeek="1">
 </calendar>
+
 </ion-content>

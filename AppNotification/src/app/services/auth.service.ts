@@ -34,6 +34,7 @@ export class AuthenticationService {
     return this.ngFireAuth.signInWithEmailAndPassword(email, password);
   }
   SignOut(){
+    this.router.navigateByUrl('login')
     return this.ngFireAuth.signOut();
   }
   getUser(){

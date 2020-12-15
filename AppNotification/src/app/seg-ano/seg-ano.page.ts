@@ -10,6 +10,7 @@ export class SegAnoPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

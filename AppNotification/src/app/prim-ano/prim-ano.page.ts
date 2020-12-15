@@ -10,6 +10,7 @@ export class PrimAnoPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
